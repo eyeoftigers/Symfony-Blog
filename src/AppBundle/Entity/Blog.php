@@ -1,4 +1,5 @@
 <?php
+//index added
 namespace AppBundle\Entity;
 
 use Gedmo\Mapping\Annotation as Gedmo;
