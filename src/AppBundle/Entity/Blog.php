@@ -4,11 +4,12 @@ namespace AppBundle\Entity;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Index;
 
 /**
  * Blog
  *
- * @ORM\Table(name="blog")
+ * @ORM\Table(name="blog",indexes={@Index(name="search_idx", columns={"id", "slug"})})
  * @ORM\Entity(repositoryClass="AppBundle\Repository\BlogRepository")
  */
 class Blog
