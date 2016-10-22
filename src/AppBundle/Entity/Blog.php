@@ -1,5 +1,4 @@
 <?php
-
 namespace AppBundle\Entity;
 
 use Gedmo\Mapping\Annotation as Gedmo;
