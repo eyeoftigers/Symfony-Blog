@@ -1,0 +1,17 @@
+{
+  "name": "blog",
+  "homepage": "https://github.com/eyeoftigers/blog",
+  "authors": [
+    "waseem i <waseemmachloy@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
