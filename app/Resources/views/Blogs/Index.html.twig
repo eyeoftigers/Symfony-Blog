@@ -2,7 +2,7 @@
 
 {% block body %}
 </br></br></br></br>
-   <table class=table table-bordered>
+   <table class='table table-bordered'>
     <thead>
       <tr>
         <th>#</th>
@@ -20,9 +20,9 @@
         <td>{{blog.description}}</td>
         <td>{{blog.createDate | date('F j, Y, g:i a')}}</td>
         <td>
-        <a href=blogs/details/{{blog.id}} class=btn btn-success>View</a>
-        <a href=blogs/edit/{{blog.id}} class=btn btn-default>Edit</a>
-        <a href=blogs/delete/{{blog.id}} class=btn btn-danger>Delete</a>
+        <a href=blogs/details/{{blog.id}} class='btn btn-success'>View</a>
+        <a href=blogs/edit/{{blog.id}} class='btn btn-default'>Edit</a>
+        <a href=blogs/delete/{{blog.id}} class='btn btn-danger'>Delete</a>
         </td>
       </tr>
       {% endfor %}
