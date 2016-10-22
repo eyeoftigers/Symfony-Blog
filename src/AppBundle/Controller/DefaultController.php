@@ -24,13 +24,17 @@ class DefaultController extends Controller
     }
 
     /**
-    * @Route("/blog/{id}", name="blog_view")
+    * @Route("/blog/{slug}", name="blog_view")
     */
-    public function detailsAction($id)
+    public function detailsAction($slug)
     {
+       
+
         $blog = $this->getDoctrine()
-        ->getRepository('AppBundle:Blog')
-        ->find($id);
+                    ->getRepository('AppBundle:Blog')
+                    ->findOneBy(array(
+                                    'slug' => $slug,
+        ));
             
         return $this->render('default/view.html.twig', array(
             'blog' => $blog
