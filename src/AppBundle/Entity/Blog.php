@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 //index added
+=======
+
+>>>>>>> parent of e8e55f3... index commit troubleshoot
 namespace AppBundle\Entity;
 
 use Gedmo\Mapping\Annotation as Gedmo;
