@@ -43,7 +43,7 @@ class BlogController extends Controller
         $blog = new Blog;
       
         $form = $this->createFormBuilder($blog)
-        ->add('slug', TextType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+        //->add('slug', TextType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
         ->add('title', TextType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
         ->add('description', TextareaType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
         ->add('Save', SubmitType::class, array('label'=> 'Create Blog', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-bottom:15px')))
@@ -51,7 +51,7 @@ class BlogController extends Controller
         
         $form->handleRequest($request);
         if($form->isSubmitted() &&  $form->isValid()){
-            $slug = $form['slug']->getData();
+            //$slug = $form['slug']->getData();
             $title = $form['title']->getData();
             $description = $form['description']->getData();
            
@@ -59,9 +59,13 @@ class BlogController extends Controller
 
             
             $now = new\DateTime('now');  
+            $blog->setTitle($title); 
+
             
-            $blog->setSlug($slug);
-            $blog->setTitle($title);          
+            //$slug = $this->get('slugify')->activateRuleset('turkish')->slugify($title);
+            //$blog->setSlug($slug);
+
+                     
             $blog->setDescription($description);
 
             $blog->setCreateDate($now);    
@@ -96,13 +100,13 @@ class BlogController extends Controller
         ->find($id);
 
         $blog->setTitle($blog->getTitle());
-        $blog->setSlug($blog->getSlug());          
+        // $blog->setSlug($blog->getSlug());          
         $blog->setDescription($blog->getDescription());      
         $blog->setCreateDate($now);        
 
         $form = $this->createFormBuilder($blog)
         ->add('title', TextType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
-        ->add('slug', TextType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+        // ->add('slug', TextType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
         ->add('description', TextareaType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
         ->add('Save', SubmitType::class, array('label'=> 'Update Blog', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-bottom:15px')))
         ->getForm();
@@ -110,7 +114,7 @@ class BlogController extends Controller
         $form->handleRequest($request);
         if($form->isSubmitted() &&  $form->isValid()){
         $title = $form['title']->getData();
-        $slug = $form['slug']->getData();
+        //$slug = $form['slug']->getData();
         $description = $form['description']->getData();
 
 
@@ -119,7 +123,7 @@ class BlogController extends Controller
         $blog = $sn->getRepository('AppBundle:Blog')->find($id);
 
         $blog->setTitle($title);
-        $blog->setSlug($slug);          
+        // $blog->setSlug($slug);          
         $blog->setDescription($description);                            
         $blog->setCreateDate($now);          
 

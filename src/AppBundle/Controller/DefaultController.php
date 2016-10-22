@@ -9,15 +9,32 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
-     */
-/*
+    * @Route("/", name="homepage")
+    */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+        
+        $blogs = $this->getDoctrine()
+        ->getRepository('AppBundle:Blog')
+        ->findAll();
+
+        return $this->render('default/blogs.html.twig', [
+           'blogs' => $blogs 
         ]);
     }
-*/
+
+    /**
+    * @Route("/blog/{id}", name="blog_view")
+    */
+    public function detailsAction($id)
+    {
+        $blog = $this->getDoctrine()
+        ->getRepository('AppBundle:Blog')
+        ->find($id);
+            
+        return $this->render('default/view.html.twig', array(
+            'blog' => $blog
+        ));
+    }
+    
 }

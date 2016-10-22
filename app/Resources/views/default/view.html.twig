@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+</br></br></br>
+<a href=/blogs class=btn btn-default>Back to Main Page</a>
+{{blog.title}}
+
+{{blog.slug}}</li>
+{{blog.description}}</li>
+{{blog.createdate | date('F j, Y, g:i a')}}
+
+{% endblock %}

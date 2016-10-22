@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+</br></br></br></br>
+      {% for blog in blogs %}
+
+        {{blog.slug}}
+        {{blog.title}}
+        {{blog.description}}
+        {{blog.createDate | date('F j, Y, g:i a')}}
+
+      {% endfor %}
+{% endblock %}
