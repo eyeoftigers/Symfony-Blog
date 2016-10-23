@@ -1,26 +1,21 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseblog.html.twig' %}
 
 {% block body %}
-<div class="row">
-    <div class="col-md-10">
-      {% for blog in blogs %}
-        <div class="row">
-          <div class="col-md-12">
-          <h2>
-            <a href=blog/{{blog.slug}}>{{blog.title}}</a>
-          <h2>
-          <p>
-          {{blog.description}}
-          </p>
 
-          {{blog.createDate | date('F j, Y, g:i a')}}
 
-          </div>
-        </div>   
-      {% endfor %}
-    </div>
+              {% for blog in blogs %}
+                <div class="post-preview">
+                    <a href="blog/{{blog.slug}}">
+                        <h2 class="post-title">
+                            {{blog.title}}
+                        </h2>
+                        <h3 class="post-subtitle">
+                            {{blog.description |striptags|slice(0, 500) }}
+                        </h3>
+                    </a>
+                    <p class="post-meta">on {{blog.createDate | date('F j, Y, g:i a')}}</p>
+                </div><hr>   
+              {% endfor %}
 
-    <div class="col-md-2">
-    </div>
-</div>      
 {% endblock %}
+

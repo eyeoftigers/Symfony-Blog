@@ -7,8 +7,9 @@
       <tr>
         <th>#</th>
         <th>Title</th>
-         <th>Created Date</th>
         <th>Descirption</th>
+         <th>Created Date</th>
+        
         <th>Actions</th>
       </tr>
     </thead>
@@ -17,12 +18,12 @@
       <tr>
         <td scope=row>{{blog.id}}</td>
         <td>{{blog.title}}</td>
-        <td>{{blog.description}}</td>
+        <td>{{blog.description |striptags|slice(0, 20) }}</td>
         <td>{{blog.createDate | date('F j, Y, g:i a')}}</td>
         <td>
-        <a href=blogs/details/{{blog.id}} class='btn btn-success'>View</a>
-        <a href=blogs/edit/{{blog.id}} class='btn btn-default'>Edit</a>
-        <a href=blogs/delete/{{blog.id}} class='btn btn-danger'>Delete</a>
+        <a href=admin/blogs/details/{{blog.id}} class='btn btn-success'>View</a>
+        <a href=admin/blogs/edit/{{blog.id}} class='btn btn-default'>Edit</a>
+        <a href=admin/blogs/delete/{{blog.id}} class='btn btn-danger'>Delete</a>
         </td>
       </tr>
       {% endfor %}

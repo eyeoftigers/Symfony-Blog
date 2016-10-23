@@ -20,7 +20,7 @@ class BlogController extends Controller
 
 
     /**
-    * @Route("/blogs", name="blog_list")
+    * @Route("/admin", name="blog_list")
     */
     public function listAction(Request $request)
     {
@@ -36,7 +36,7 @@ class BlogController extends Controller
 
 
     /**
-    * @Route("/blogs/create", name="blog_create")
+    * @Route("admin/blogs/create", name="blog_create")
     */
     public function createAction(Request $request)
     {
@@ -45,7 +45,7 @@ class BlogController extends Controller
         $form = $this->createFormBuilder($blog)
         //->add('slug', TextType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
         ->add('title', TextType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
-        ->add('description', TextareaType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+        ->add('description', TextareaType::class, array('attr' => array('class' => 'form-control trumbowyg-demo', 'style' => 'margin-bottom:15px')))
         ->add('Save', SubmitType::class, array('label'=> 'Create Blog', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-bottom:15px')))
         ->getForm();
         
@@ -90,7 +90,7 @@ class BlogController extends Controller
 
 
     /**
-    * @Route("/blogs/edit/{id}", name="blog_edit")
+    * @Route("admin/blogs/edit/{id}", name="blog_edit")
     */
     public function editAction($id,Request $request)
     {
@@ -107,7 +107,7 @@ class BlogController extends Controller
         $form = $this->createFormBuilder($blog)
         ->add('title', TextType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
         // ->add('slug', TextType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
-        ->add('description', TextareaType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+        ->add('description', TextareaType::class, array('attr' => array('class' => 'form-control trumbowyg-demo', 'style' => 'margin-bottom:15px')))
         ->add('Save', SubmitType::class, array('label'=> 'Update Blog', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-bottom:15px')))
         ->getForm();
 
@@ -145,7 +145,7 @@ class BlogController extends Controller
 
 
     /**
-    * @Route("/blogs/delete/{id}", name="blog_delete")
+    * @Route("admin/blogs/delete/{id}", name="blog_delete")
     */ 
     public function deleteAction($id)
     {
@@ -166,7 +166,7 @@ class BlogController extends Controller
 
 
     /**
-    * @Route("/blogs/details/{id}", name="blog_details")
+    * @Route("admin/blogs/details/{id}", name="blog_details")
     */
     public function detailsAction($id)
     {

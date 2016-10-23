@@ -12,7 +12,7 @@
     <title>{% block title %}Welcome!{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
       {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
   </head>
@@ -33,7 +33,7 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="/">Home</a></li>
-            <li><a href="/blogs/create">Create</a></li>
+            <li><a href="/admin/blogs/create">Create</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -50,13 +50,22 @@
        {% for flash_message in app.session.flashbag.get('error') %}
     <div class="alert alert-danger">{{flash_message}}</div>
     {% endfor %}
-     {% block body %}{% endblock %}   
+    {% block body %}{% endblock %}   
     </div>   
     </div>
     </div><!-- /.container -->
   {% block javascripts %}
-    <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/assets/vendor/trumbowyg/dist/trumbowyg.min.js"></script>
+    <link rel="stylesheet" href="/assets/vendor/trumbowyg/dist/ui/trumbowyg.min.css">
+    <script type="text/javascript">
+      $('.trumbowyg-demo').trumbowyg({
+        btns: ['strong', 'em', '|', 'insertImage'],
+        autogrow: true
+        });
+
+    </script>
   {% endblock %}
   </body>
 </html>
