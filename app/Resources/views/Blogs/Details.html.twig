@@ -2,7 +2,7 @@
 
 {% block body %}
 </br></br></br>
-<a href=/admin class=btn btn-default>Back to Blogs</a>
+<a href={{ path('blog_list')  }} class=btn btn-default>Back to Blogs</a>
 <h2 class=page-header>{{blog.title}}</h2>
 <ul class=list-group>
 <li class=list-group-item>Slug : {{blog.slug}}</li>

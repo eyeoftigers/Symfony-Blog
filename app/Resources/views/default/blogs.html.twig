@@ -5,7 +5,7 @@
 
               {% for blog in blogs %}
                 <div class="post-preview">
-                    <a href="blog/{{blog.slug}}">
+                    <a href="{{ path('blog_view',{'slug': blog.slug}) }}">
                         <h2 class="post-title">
                             {{blog.title}}
                         </h2>
