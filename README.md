@@ -19,3 +19,6 @@ A Symfony project created on October 22, 2016, 4:03 pm.
 
 
 Go to /register , register a new admin. Click create to write new blog.
+
+  Hosted on DigitalOcean ubunto /Lamp Stack  http://139.59.215.161/
+  Some link seem not working on above host will fix later
