@@ -1,13 +1,21 @@
 A Symfony project created on October 22, 2016, 4:03 pm.
 
-Run command:      git clone https://github.com/eyeoftigers/Symfony-Blog.git
-go to Symfony-Blog direcotry in CMD
-Run command:     composer update
-Run command:     php bin/console doctrine:database:create
-Run command:     php bin/console doctrine:schema:update --force
-Run command:     php bin/console doctrine:fixtures:load
+1 Run command:      git clone https://github.com/eyeoftigers/Symfony-Blog.git
 
-Run command:     bower install
-Run command:     php bin/console server:run
+2 go to Symfony-Blog direcotry in CMD
+
+3 Run command:     composer update
+
+4 Run command:     php bin/console doctrine:database:create
+
+5 Run command:     php bin/console doctrine:schema:update --force
+
+6 Run command:     php bin/console doctrine:fixtures:load
+
+
+7 Run command:     bower install
+
+8 Run command:     php bin/console server:run
+
 
 Go to /register , register a new admin. Click create to write new blog.
