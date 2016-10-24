@@ -1,4 +1,6 @@
 A Symfony project created on October 22, 2016, 4:03 pm.d
+# URL
+http://139.59.215.161
 
 # SETUP
 1 Run command:      git clone https://github.com/eyeoftigers/Symfony-Blog.git
@@ -22,7 +24,7 @@ Go to http://139.59.215.161/register , register a new admin. Click create to wri
 
 # Or login with already regiser admin
 
-  URL   http://19.59.215.161/login
+  URL  http://139.59.215.161/login
   USER  admin@admin.com
   PASS  admin@admin.com
 
