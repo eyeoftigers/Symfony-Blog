@@ -22,3 +22,5 @@ Go to /register , register a new admin. Click create to write new blog.
 
   Hosted on DigitalOcean ubunto /Lamp Stack  http://139.59.215.161/
   Some link seem not working on above host will fix later
+  Fixed * .Linux file system is Case sensitive unlike Windows.(View were called as index.html.twig in Controller while the view name was
+  Index.html.twig , notice the small i and big I ) 
